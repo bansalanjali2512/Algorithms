@@ -1,0 +1,80 @@
+/*
+    Q.6:  Suppose you’re consulting for a bank that’s concerned about fraud detection,
+    and they come to you with the following problem. They have a collection of n bank
+    cards that they’ve confiscated, suspecting them of being used in fraud. Each bank
+    card is a small plastic object, containing a magnetic stripe with some encrypted
+    data, and it corresponds to a unique account in the bank. Each account can have many
+    bank cards corresponding to it, and two bank cards are equivalent if they correspond
+    to the same account. It’s very difficult to read the account number off a bank card
+    directly, but the bank has a high-tech “equivalence tester” that takes two bank cards
+    and, after performing some computations, determines whether they are equivalent.
+    Their question is the following: among the collection of  cards, is there a set of
+    more thann/2 of them that are all equivalent to one another? Assume that the only
+    feasible operations you can do with the cards are to pick two of them and plug them
+    in to the equivalence tester. Show how to decide the answer to their question with
+    only O(n log n) invocations of the equivalence tester.
+    
+    Submitted By: Anjali Bansal (04)
+*/
+
+
+*******************************
+Approach
+*******************************
+
+=> Divide and Conquer
+=> Recursion
+
+
+*******************************
+Function1: 
+equivalenceTester(card1, card2)
+*******************************
+
+/*
+    Objective       : To check whether two cards belong to same account
+    Input parameters: card1 - account number for card 1
+                      card2 - account number for card 2
+    Return Value    : True, if both cards belong to same account otherwise, false
+*/
+
+
+*******************************
+Function2: 
+frequency(card, cards[], n)
+*******************************
+
+/*
+    Objective       : To calculate the number of cards associated to same account as that of the card passed to this function
+    Input parameters: card - holds the account number of card to be tested
+                      cards - array of cards
+                      n - number of cards
+    Return Value    : number of cards associated to same account as that of the card passed to this function
+*/
+
+
+*******************************
+Function3: 
+checkMajorityCard(cards[], n)
+*******************************
+
+/*
+    Objective       : To check for subsequence in a given string
+    Input parameters: sequence - string, sequence S
+                      subsequence - string, subsequence S'
+    Return Value    : account number of majority  card or -1 if there is no majority card
+*/
+
+
+*******************************
+Time Complexity
+*******************************
+
+Function 1: O(1)
+Function 2: O(n)
+Function 3: O(nlogn)
+
+On applying master's theorem, case 2 is observed.
+Therefore, T(n) = O(nlogn)
+
+=> Time complexity = O(nlogn)
